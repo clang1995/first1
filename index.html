@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
+  <!DOCTYPE html>
+  <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <style>
        body{
         padding-top: 50px;
+        padding-bottom: 50px;
        }
        
        /* 轮播广告 */
@@ -17,12 +18,28 @@
             height: 500px;
             margin-bottom: 60px;
         }
-        .carousel .item{
+
+        .carousel .item {
             height: 500px;
+            background-color: #000;
         }
-        .carousel img{
-            height: 500px;
+
+        .carousel .item img {
+            width: 100%;
         }
+        .carousel-caption {
+            z-index: 10;
+        }
+
+        .carousel-caption p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .mytab{
+            margin: 70px 0;
+        }
+
     </style>
 
     <!--[if lt IE 9]>
@@ -32,6 +49,7 @@
   </head>
   <body>
   <!-- 顶部导航 -->
+  
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
         <div class="navbar-header">
@@ -52,21 +70,21 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Chrome</a></li>
-            <li><a href="#">Firefox</a></li>
-            <li><a href="#">Safari</a></li>
-            <li><a href="#">Opera</a></li>
-            <li><a href="#">IE</a></li>
+            <li><a href="#chrome">Chrome</a></li>
+            <li><a href="#firefox">Firefox</a></li>
+            <li><a href="#safari">Safari</a></li>
+            <li><a href="#opera">Opera</a></li>
+            <li><a href="#ie">IE</a></li>
           </ul>
         </li>
-        <li><a href="#">关于</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
       </ul>
     </div>
   </div>
-</nav>
- 
+  </nav>
+
    <!-- 广告轮播 -->
-<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+  <div id="ad-carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#ad-carousel" data-slide-to="1"></li>
@@ -146,20 +164,138 @@
             </div>
         </div>
     </div>
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+    
+  </div>
+     
+     <!-- 栅格内容 -->
+     <div class="container">
+    <div class="container-fluid" style="text-align: center;">
+       <div class="row">
+         <div class="col-xs-6 col-md-4">
+           <img class="img-circle" src="img/chrome-logo-small.jpg" alt="chrome">
+           
+            <h2>Chrome</h2>
+
+            <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+         </div>
+         <div class="col-xs-6 col-md-4">
+           <img class="img-circle" src="img/firefox-logo-small.jpg" alt="chrome">
+
+            <h2>Chrome</h2>
+
+            <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+         </div>
+         <div class="col-xs-6 col-md-4">
+           <img class="img-circle" src="img/safari-logo-small.jpg" alt="chrome">
+
+            <h2>Chrome</h2>
+
+            <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+         </div>
+       </div>
+       <hr style="margin: 40px 0">
+
+       <!-- 标签页 -->
+       <ul class="nav nav-tabs mytab" role="tablist">
+        <li role="presentation" class="active"><a href="#chrome" role="tab" data-toggle="tab">chrome</a></li>
+        <li role="presentation"><a href="#firefox" role="tab" data-toggle="tab">firefox</a></li>
+        <li role="presentation"><a href="#safari" role="tab" data-toggle="tab">safari</a></li>
+        <li role="presentation"><a href="#opera" role="tab" data-toggle="tab">opera</a></li>
+       </ul>
+
+       <!-- Tab panes -->
+       <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="chrome">
+             <div class="row">
+             <div class="col-md-4">
+               <img class="img-circle" src="img/chrome-logo.jpg" alt="chrome">
+              </div>
+              <div class="col-md-6">
+               <h2>Chrome</h2>
+
+              <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+              <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+              </div>
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="firefox">
+              <div class="col-md-6">
+              <img class="img-circle" src="img/firefox-logo.jpg" alt="chrome">
+               </div>
+              <div class="col-md-4">
+               <h2>Chrome</h2>
+
+              <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+              <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+              </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="safari">
+               <div class="col-md-6">
+                <img class="img-circle" src="img/safari-logo.jpg" alt="chrome">
+                </div>
+                <div class="col-md-6">
+                <h2>Chrome</h2>
+
+                <p>Google Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+                <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+               </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="opera">
+              <div class="col-md-6">
+                <img class="img-circle" src="img/ie-logo.jpg" alt="chrome">
+                </div>
+                <div class="col-md-6">
+                <h2>Chrome</h2>
+
+                <p>Google   Chrome，又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+
+                <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+              </div>
+          </div>
+      </div>
+      
+     </div>
+      <footer>
+         <p class="pull-right"><a href="#top">返回顶部</a></p>
+         <p>杨诗朗</p>
+      </footer> 
+     </div>
+     <!-- 关于 -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>第一个简单的bootstrap实例。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
-</html>
+  </html>
